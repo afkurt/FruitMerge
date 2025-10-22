@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1cbc359ae3b43e44b89234fdad45d46f, type: 3}
+  m_Name: Apple
+  m_EditorClassIdentifier: 
+  fruitName: Apple
+  sprite: {fileID: -3946612055665836118, guid: 2bef337dee8cb9045a5b1da12cb5d5ab, type: 3}
+  level: 1
+  nextFruit: {fileID: 11400000, guid: f1c24c37a18e68442ab18830891f9a9b, type: 2}
+  point: 1
+  soundEffect: {fileID: 8300000, guid: 201d3f062eb8a4b6e95b84b12a9dd8f8, type: 3}
