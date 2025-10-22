@@ -21,7 +21,6 @@ public class SoundManager : MonoBehaviour
     {
         if (_audiosource == null) return;
         _audiosource.PlayOneShot(clip);
-
     }
 
     public void PlayTada() => PlaySound(tada);
