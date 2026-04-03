@@ -15,6 +15,9 @@ public class SoundManager : MonoBehaviour
         Instance = this;
 
         _audiosource = GetComponent<AudioSource>();
+
+        float savedVolume = PlayerPrefs.GetFloat("Volume", 1f);
+        _audiosource.volume = savedVolume;
     }
 
     public void PlaySound(AudioClip clip)
@@ -24,6 +27,14 @@ public class SoundManager : MonoBehaviour
     }
 
     public void PlayTada() => PlaySound(tada);
-    
+
+
+    public void SetVolume(float volume)
+    {
+        _audiosource.volume = volume;
+        PlayerPrefs.SetFloat("Volume", volume);
+        PlayerPrefs.Save();
+    }
+
 
 }

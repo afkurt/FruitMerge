@@ -1,7 +1,10 @@
-using UnityEngine;
-using TMPro;
 using DG.Tweening;
+using System;
+using TMPro;
+using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
+using static UnityEngine.Rendering.DebugUI;
 
 public class UIManager : MonoBehaviour
 {
@@ -9,6 +12,9 @@ public class UIManager : MonoBehaviour
     public TextMeshProUGUI pointText;
     public TextMeshProUGUI endpointText;
     public TextMeshProUGUI highscoreText;
+    public GameObject InGameUI;
+    public Slider _soundSlider;
+
 
     public GameObject GameoverScene;
     
@@ -24,6 +30,14 @@ public class UIManager : MonoBehaviour
     {
         int savedHighscore = PlayerPrefs.GetInt("Highscore", 0);
         highscoreText.text = "Best: " + savedHighscore.ToString();
+        float savedVolume = PlayerPrefs.GetFloat("Volume", 1f);
+        _soundSlider.value = savedVolume;
+        _soundSlider.onValueChanged.AddListener(OnSoundSliderChanged);
+    }
+
+    private void OnSoundSliderChanged(float value)
+    {
+        SoundManager.Instance.SetVolume(value);
     }
 
     private void OnEnable()
@@ -62,6 +76,7 @@ public class UIManager : MonoBehaviour
     public void ShowGameover()
     {
         SaveHighscore();
+        InGameUI.gameObject.SetActive(false);
         int highscore = PlayerPrefs.GetInt("Highscore", 0);
         highscoreText.text = highscore.ToString();
         GameoverScene.SetActive(true);
