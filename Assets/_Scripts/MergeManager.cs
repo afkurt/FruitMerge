@@ -28,7 +28,7 @@ public class MergeManager : MonoBehaviour
         Destroy(a.gameObject);
         Destroy(b.gameObject);
         if (a.data.point == 5) return;
-
+        Handheld.Vibrate();
         GameObject newFruit = Instantiate(PrefabManager.Instance.GetPrefab(next), pos, Quaternion.identity);
     }
 
