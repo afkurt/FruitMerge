@@ -8,8 +8,8 @@ public class FruitSpawner : MonoBehaviour
     public List<Fruit> Fruits;
 
     [SerializeField] private float _moveSpeed = 10f;
-    [SerializeField] private float _minX = -2.5f;
-    [SerializeField] private float _maxX = 2.5f;
+    [SerializeField] private float _minX = -4f;
+    [SerializeField] private float _maxX = 4f;
     [SerializeField] private float _cd = 1f;
     [SerializeField] private float _pressTime = 0f;
 
